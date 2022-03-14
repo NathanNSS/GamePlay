@@ -3,15 +3,14 @@ import {
   StatusBar
 } from "react-native"
 
-import { SignIn } from './src/screens/SingIn/singIn';
-import { Home } from './src/screens/Home/home';
-
+//Import Fonts
 import { Inter_400Regular, Inter_500Medium } from "@expo-google-fonts/inter";
 import { Rajdhani_500Medium, Rajdhani_700Bold} from "@expo-google-fonts/rajdhani";
 import { useFonts } from 'expo-font';
 
 import AppLoading from 'expo-app-loading';
 import { Background } from './src/components/Background/background';
+import { Routes } from './src/routes';
 
 export default function (){
 
@@ -30,7 +29,7 @@ export default function (){
         backgroundColor="transparent"
         translucent
       />
-      <Home/>
+      <Routes/>
     </Background>
   )
 }
