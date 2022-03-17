@@ -4,7 +4,7 @@ import {
     Text,
     Image
 } from "react-native"; 
-import {styles} from './singInStyles';
+import {styles} from './styleSingIn';
 import  IllustrationImg from '../../assets/illustration.png';
 import { ButtonIcon } from "../../components/ButtonIcon/buttonIcon";
 import { useNavigation } from "@react-navigation/native"
