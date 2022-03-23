@@ -66,11 +66,13 @@ export function AppointmentDetails() {
 
             </ImageBackground>
 
-            <ListHeader
-                title="Jogadore"
-                subTitle="Total 3"
-            />
-
+            <View style={{paddingHorizontal:24}}>
+                <ListHeader
+                    title="Jogadores"
+                    subTitle="Total 3"
+                />
+            </View>
+            
             <FlatList
                 data={members}
                 keyExtractor={item => item.id}

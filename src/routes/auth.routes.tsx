@@ -9,6 +9,7 @@ const { Navigator, Screen } = createStackNavigator();
 import { SignIn } from '../screens/SingIn/singIn';
 import { Home } from '../screens/Home/home';
 import { AppointmentDetails } from "../screens/AppointmentDetails/appointmentDetails";
+import { AppointmentCreate } from "../screens/AppointmentCreate/appointmentCreate";
 
 export function AuthRoutes(){
     return(
@@ -33,6 +34,11 @@ export function AuthRoutes(){
             <Screen
                 name="AppointmentDetails"
                 component={AppointmentDetails}
+            />
+            
+            <Screen
+                name="AppointmentCreate"
+                component={AppointmentCreate}
             />
             
         </Navigator>
