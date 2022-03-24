@@ -52,6 +52,16 @@ export const styles = StyleSheet.create({
         fontSize:13,
         marginLeft: 7,
         //marginRight: 24
+    },
+    borderIcon:{
+        width:66,
+        height:66,
+        borderRadius:8,
+        borderWidth:1,
+        borderColor:theme.colors.secondary75,
+        backgroundColor: theme.colors.secondary70,
+        marginRight:20,
+        overflow:'hidden'
     }
     
 })

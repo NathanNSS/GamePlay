@@ -12,6 +12,7 @@ export const styles = StyleSheet.create({
         fontFamily: theme.fonts.text400,
         borderWidth:1,
         borderColor:theme.colors.secondary50,
+        lineHeight:15,
         fontSize:13,
         marginRight:4,
         padding:10,

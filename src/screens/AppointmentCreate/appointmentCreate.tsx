@@ -28,12 +28,16 @@ import { GuildProps } from "../../components/Guild/guild";
 
 
 export function AppointmentCreate() {
-   const [category, setCategory] = useState('')
+   const [category, setCategory] = useState('1')
    const [openGuildsModal, setOpenGuildsModal] = useState(false)
    const [guild, setGuild] = useState<GuildProps>({} as GuildProps)
 
     function handleOpenGuilds() {
         setOpenGuildsModal(true);
+    }
+    
+    function handleCloseGuilds() {
+        setOpenGuildsModal(false);
     }
 
     function handleGuildSelect(guildSelect:GuildProps) {
@@ -42,7 +46,7 @@ export function AppointmentCreate() {
     }
 
     function handleCategorySelect(categoryId: string){
-    categoryId === category ? setCategory('') : setCategory(categoryId);
+        setCategory(categoryId);
     }
 
     return (
@@ -50,102 +54,105 @@ export function AppointmentCreate() {
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
             style={styles.container}
         >   
-            <ScrollView>
-                <Background>
-                    <Header
-                        title="Agendar Partida"
-                    />
-                    
-                    <Text style={[styles.label, {marginLeft:25, marginTop:36, marginBottom:18}]}>
-                        Categoria
-                    </Text>
-
-                    <CategorySelect
-                        categorySelected={category}
-                        setCategory={handleCategorySelect}
-                        hasCheckBox={true}
-                    />
-
-                    <View style={styles.form}>
-                        <RectButton onPress={handleOpenGuilds}>
-                            <View style={styles.select}>
-                                {
-                                    guild.icon ? <GuildIcon url={guild.icon}/> : <View style={styles.image} />
-                                }
-                                
-                                <View style={styles.selectBody}>
-                                    <Text style={[styles.label,{marginBottom:0}]}>
-                                        {guild.name ? guild.name : 'Selecione um Servidor'}
-                                    </Text>
-                                </View>
-                                <Feather
-                                    name="chevron-right"
-                                    color={theme.colors.heading}
-                                    size={18}
-                                />
-                            </View>
-                        </RectButton>
-
-                        <View style={styles.field}>
-                            <View>
-                                <Text style={styles.label}>
-                                    Dia e Mês
-                                </Text>
-
-                                <View style={styles.column}>
-                                    <SmallInput maxLength={2}/>
-                                    <Text style={styles.divider}>
-                                        /
-                                    </Text>
-                                    <SmallInput maxLength={2}/>
-                                </View> 
-                            </View>
-                            
-                            <View>
-                                <Text style={styles.label}>
-                                    Hora e Minuto
-                                </Text>
-
-                                <View style={styles.column}>
-                                    <SmallInput maxLength={2}/>
-                                    <Text style={styles.divider}>
-                                        : 
-                                    </Text>
-                                    <SmallInput maxLength={2}/>
-                                </View> 
-                            </View>
-                            
-
-
-                        </View>
+            <Background>
+                <ScrollView>
+                        <Header
+                            title="Agendar Partida"
+                        />
                         
-                        <View style={[styles.field, { marginBottom:12}]}>
-                            <ListHeader
-                                title="Descrição"
-                                subTitle="Max 100 caracteres"
-                            />
-                        </View>
+                        <Text style={[styles.label, {marginLeft:25, marginTop:36, marginBottom:18}]}>
+                            Categoria
+                        </Text>
 
-                        <TextArea
-                            autoCorrect={true}
-                            multiline={true}
-                            maxLength={100}
-                            numberOfLines={5}
-                            textAlignVertical={"top"}
+                        <CategorySelect
+                            categorySelected={category}
+                            setCategory={handleCategorySelect}
+                            hasCheckBox={true}
                         />
 
-                        <View style={styles.footer}>
-                            <Button title="Agendar"/>
-                        </View>
+                        <View style={styles.form}>
+                            <RectButton onPress={handleOpenGuilds}>
+                                <View style={styles.select}>
+                                    {
+                                        guild.icon ? <GuildIcon url={guild.icon}/> : <View style={styles.image} />
+                                    }
+                                    
+                                    <View style={styles.selectBody}>
+                                        <Text style={[styles.label,{marginBottom:0}]}>
+                                            {guild.name ? guild.name : 'Selecione um Servidor'}
+                                        </Text>
+                                    </View>
+                                    <Feather
+                                        name="chevron-right"
+                                        color={theme.colors.heading}
+                                        size={18}
+                                    />
+                                </View>
+                            </RectButton>
 
-                    </View> 
-                    <ModalView
-                        visible={openGuildsModal}
-                    > 
-                        <Guilds handleGuildSelect={handleGuildSelect}/>
-                    </ModalView>            
-                </Background>
-            </ScrollView>
+                            <View style={styles.field}>
+                                <View>
+                                    <Text style={styles.label}>
+                                        Dia e Mês
+                                    </Text>
+
+                                    <View style={styles.column}>
+                                        <SmallInput maxLength={2}/>
+                                        <Text style={styles.divider}>
+                                            /
+                                        </Text>
+                                        <SmallInput maxLength={2}/>
+                                    </View> 
+                                </View>
+                                
+                                <View>
+                                    <Text style={styles.label}>
+                                        Hora e Minuto
+                                    </Text>
+
+                                    <View style={styles.column}>
+                                        <SmallInput maxLength={2}/>
+                                        <Text style={styles.divider}>
+                                            : 
+                                        </Text>
+                                        <SmallInput maxLength={2}/>
+                                    </View> 
+                                </View>
+                                
+
+
+                            </View>
+                            
+                            <View style={[styles.field, { marginBottom:5}]}>
+                                <ListHeader
+                                    title="Descrição"
+                                    subTitle="Max 100 caracteres"
+                                />
+                            </View>
+
+                            <TextArea
+                                autoCorrect={true}
+                                multiline={true}
+                                maxLength={100}
+                                numberOfLines={5}
+                                textAlignVertical={"top"}
+                                placeholder="Descrição da Partida"
+                                placeholderTextColor={theme.colors.highlight}                                
+                            />
+
+                            <View style={styles.footer}>
+                                <Button title="Agendar"/>
+                            </View>
+
+                        </View> 
+                        <ModalView
+                            visible={openGuildsModal}
+                            closeModal={handleCloseGuilds}
+                        > 
+                            <Guilds handleGuildSelect={handleGuildSelect}/>
+                        </ModalView>            
+                </ScrollView>
+            </Background>
         </KeyboardAvoidingView>
     )
 }

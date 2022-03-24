@@ -1,17 +1,29 @@
 import React from "react";
-import { 
+import {
     View,
     Text,
     Image
 } from 'react-native';
 
-import { styles } from  './styleListDivider';
+import { styles } from './styleListDivider';
 
-export function ListDivider(){
+interface Props {
+    isCentered?: boolean;
+}
 
-    return(
+export function ListDivider({ isCentered }: Props) {
+
+    return (
         <View
-            style={styles.container}
+            style={[
+                styles.container,
+                isCentered ? {
+                    marginVertical: 12
+                } : {
+                    //marginTop: 2,
+                    //marginBottom: 31
+                } 
+            ]}
         />
     )
 }

@@ -6,6 +6,8 @@ import {
 } from "react-native"; 
 import {styles} from './styleSingIn';
 
+import { useAuth } from "../../hooks/auth";
+
 import  IllustrationImg from '../../assets/illustration.png';
 
 import { ButtonIcon } from "../../components/ButtonIcon/buttonIcon";
@@ -14,6 +16,9 @@ import { Background } from '../../components/Background/background';
 
  
 export function SignIn(){
+
+    const {user} = useAuth()
+
     const navigation = useNavigation()
 
     function handleSignIn() {

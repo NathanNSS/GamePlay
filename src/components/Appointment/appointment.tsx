@@ -12,13 +12,9 @@ import PlayerSvg from "../../assets/player.svg";
 import CalenderSvg from "../../assets/calendar.svg";
 import { theme } from "../../global/styles/theme";
 import { color } from "react-native-reanimated";
+import { GuildProps } from "../Guild/guild";
 
-export interface GuildProps {
-    id: string;
-    name:string;
-    icon?: string | null;
-    owner: boolean;
-} 
+
 
 interface AppointmentsProps{
     id: string;
@@ -41,7 +37,9 @@ export function Appointment({data, ...rest}:Props){
     return( 
         <RectButton {...rest}>
            <View style={styles.container}>
-                <GuildIcon url={data.guild.icon}/>
+                <View style={styles.borderIcon}>
+                    <GuildIcon url={data.guild.icon}/>
+                </View>
                 <View style={styles.content}>
 
                     <View style={styles.header}>

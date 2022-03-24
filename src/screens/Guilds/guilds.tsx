@@ -24,6 +24,12 @@ export function Guilds({handleGuildSelect}: Props) {
            name: 'Lendários',
            icon: 'https://storage.qoo-static.com/game/17607/KGhkiIABcwb0ZdwWMfGGBsHCb6gQbQNX.jpg',
            owner: true
+       },
+       {
+           id: '2',
+           name: 'Lendários',
+           icon: 'https://storage.qoo-static.com/game/17607/KGhkiIABcwb0ZdwWMfGGBsHCb6gQbQNX.jpg',
+           owner: true
        }
    ]
 
@@ -34,7 +40,9 @@ export function Guilds({handleGuildSelect}: Props) {
                 style={styles.guilds}
                 keyExtractor={item => item.id}
                 showsVerticalScrollIndicator={false}
-                ItemSeparatorComponent={()=><ListDivider/>}
+                ItemSeparatorComponent={()=><ListDivider isCentered={true}/>}
+                //ListHeaderComponent={()=> <ListDivider isCentered={true}/>}
+                contentContainerStyle={{paddingVertical:40}}
                 renderItem={({item}) => (
                     <Guild 
                         data={item}

@@ -44,7 +44,7 @@ export function Home(){
             category:'3',
             date:'23/06 ás 19:00h',
             description:'Jogando com amigos'
-        }
+        },
     ]
 
     function handleCategorySelect(categoryId: string){
@@ -81,6 +81,7 @@ export function Home(){
                     style={styles.matches}
                     showsVerticalScrollIndicator={false}
                     ItemSeparatorComponent={()=> <ListDivider/>}
+                    contentContainerStyle={{paddingBottom:40}}
                     renderItem={({item }) =>(
                         <Appointment 
                             data={item}
