@@ -6,7 +6,6 @@ import { theme } from "../global/styles/theme";
 
 const { Navigator, Screen } = createStackNavigator();
 
-import { SignIn } from '../screens/SingIn/singIn';
 import { Home } from '../screens/Home/home';
 import { AppointmentDetails } from "../screens/AppointmentDetails/appointmentDetails";
 import { AppointmentCreate } from "../screens/AppointmentCreate/appointmentCreate";
@@ -20,11 +19,7 @@ export function AuthRoutes(){
                     backgroundColor:theme.colors.secondary100
                 }
             }}
-        >
-            <Screen
-                name="SignIn"
-                component={SignIn}
-            />
+        >          
 
             <Screen
                 name="Home"
