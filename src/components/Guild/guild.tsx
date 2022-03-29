@@ -31,13 +31,13 @@ export function Guild({data, ...rest}:Props) {
             activeOpacity={0.7}
             {...rest}
         > 
-            <GuildIcon url={data.icon}/>
+            <GuildIcon guildId={data.id} iconId={data.icon}/>
             
             <View style={styles.content}>
                 <View>
                     <Text style={styles.title}>
                         {data.name}
-                    </Text>
+                    </Text> 
 
                     <Text style={styles.type}>
                         {data.owner ? 'Administrador' : 'Convidado'}

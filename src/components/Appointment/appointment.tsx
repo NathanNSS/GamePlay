@@ -16,7 +16,7 @@ import { GuildProps } from "../Guild/guild";
 
 
 
-interface AppointmentsProps{
+export interface AppointmentsProps{
     id: string;
     guild: GuildProps;
     category: string;
@@ -38,7 +38,7 @@ export function Appointment({data, ...rest}:Props){
         <RectButton {...rest}>
            <View style={styles.container}>
                 <View style={styles.borderIcon}>
-                    <GuildIcon url={data.guild.icon}/>
+                    <GuildIcon guildId={data.guild.id} iconId={data.guild.icon}/>
                 </View>
                 <View style={styles.content}>
 

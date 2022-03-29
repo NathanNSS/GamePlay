@@ -3,7 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 
 import { useAuth } from "../hooks/auth";
 
-import { AuthRoutes } from "./auth.routes";
+import { AuthRoutes } from "./authenticated.routes";
 import { PublicRoutes } from "./public.routes";
 
 export function Routes (){

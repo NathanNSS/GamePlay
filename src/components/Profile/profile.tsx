@@ -1,19 +1,40 @@
 import React from "react";
 import { 
     View,
-    Text
+    Text,
+    Alert
 } from 'react-native';
 
 import { styles } from  './profileStyle';
 import { Avatar } from "../Avatar/avatar";
 import { useAuth } from "../../hooks/auth";
+import { RectButton } from "react-native-gesture-handler";
 
 export function Profile(){
-    const {user} = useAuth();
-    console.log(user)
+    const {user, logOut} = useAuth();
+
+    function handleSignOut(){
+        Alert.alert(
+            'LogOut',
+            'Deseja sair do GamePlay',
+            [
+                {
+                    text:'Não',
+                    style:'cancel'
+                },
+                {
+                    text:'Sim',
+                    onPress: () => logOut()
+                }
+            ]
+        )
+    }
+
     return(
         <View style={styles.container}>
-            <Avatar urlImage={user.avatar}/>
+            <RectButton onPress={handleSignOut}>
+                <Avatar urlImage={user.avatar}/>
+            </RectButton>
             <View>
                 <View style={styles.user}>
                     <Text style={styles.greeting}>
