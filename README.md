@@ -13,7 +13,7 @@
 
 
 ## 💻 Projeto
-Este projeto foi dessenvolvido durante a semana do NLW 06 da [Rocketseat](https://github.com/rocketseat-education). O projeto e um aplicativo feito em React Native, que tem como objetivo ajudar a se conectar e organiza os momentos de diversão e jogatinas com os amigos.
+Este projeto foi desenvolvido durante a semana do NLW 06 da [Rocketseat](https://github.com/rocketseat-education). O projeto e um aplicativo feito em React Native, que tem como objetivo ajudar a se conectar e organiza os momentos de diversão e jogatinas com os amigos.
 
 
 ## :hammer_and_wrench: Features 
