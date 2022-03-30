@@ -130,11 +130,11 @@ export function AppointmentCreate() {
                                     </Text>
 
                                     <View style={styles.column}>
-                                        <SmallInput maxLength={2} onChangeText={setDay}/>
+                                        <SmallInput maxLength={2} onChangeText={setDay} />
                                         <Text style={styles.divider}>
                                             /
                                         </Text>
-                                        <SmallInput maxLength={2} onChangeText={setMonth}/>
+                                        <SmallInput maxLength={2} onChangeText={setMonth} />
                                     </View> 
                                 </View>
                                 
