@@ -9,7 +9,7 @@
 </p>
 
 
-![cover](.github/cover.png?style=flat)
+![cover](https://github.com/rocketseat-education/nlw-06-react-native/raw/master/.github/cover.png?style=flat)
 
 
 ## 💻 Projeto
